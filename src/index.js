@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { initializeImageChecking } from './utils/EnsureImages';
+
+// Initialize image checking to ensure all required images are available
+initializeImageChecking();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

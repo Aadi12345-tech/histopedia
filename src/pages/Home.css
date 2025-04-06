@@ -1,0 +1,396 @@
+body {
+  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+  background-attachment: fixed;
+}
+
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  animation: fadeIn 0.8s ease;
+  position: relative;
+}
+
+.home-container::before, .home-container::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(123, 104, 238, 0.2) 0%, rgba(123, 104, 238, 0) 70%);
+  z-index: -1;
+  animation: sparkle 4s infinite ease-in-out alternate;
+}
+
+.home-container::before {
+  top: 10%;
+  right: 5%;
+  animation-delay: 0.5s;
+}
+
+.home-container::after {
+  bottom: 10%;
+  left: 5%;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.welcome-banner {
+  background: linear-gradient(135deg, #4338ca, #2563eb, #1d4ed8);
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 20px 40px -12px rgba(37, 99, 235, 0.3),
+    0 0 15px rgba(37, 99, 235, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+  padding: 3.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.welcome-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(80deg, 
+    rgba(255, 255, 255, 0) 20%, 
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(35deg);
+  animation: shimmer 5s infinite linear;
+  pointer-events: none;
+}
+
+.welcome-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="%23ffffff" fill-opacity="0.1" fill-rule="evenodd"/%3E%3C/svg%3E');
+  opacity: 0.6;
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  letter-spacing: -0.03em;
+  animation: slideIn 0.8s ease-out 0.2s backwards;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Add a non-gradient version that will display when the gradient fails */
+.dark-mode .banner-title {
+  color: white !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* Apply gradient text styling with proper fallback */
+.banner-title-gradient {
+  background: linear-gradient(90deg, #ffffff, #e0e7ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: white; /* Fallback for browsers that don't support gradient text */
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.banner-text {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.7;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.8s ease-out 0.4s backwards;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #4338ca, #6366f1, #818cf8);
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(99, 102, 241, 0.4);
+}
+
+.city-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  padding: 0.5rem 0 2rem;
+  perspective: 1000px;
+}
+
+.city-card {
+  min-width: 275px;
+  width: 27%;
+  flex-shrink: 0;
+  background-color: white;
+  border-radius: 1.2rem;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.05),
+    0 5px 15px rgba(0, 0, 0, 0.03),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  transform: translateY(0) rotateY(0);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+  border: none;
+  transform-style: preserve-3d;
+}
+
+.city-card:nth-child(1) { 
+  animation: cardAppear 0.8s ease-out 0.1s backwards; 
+  animation: float 8s infinite ease-in-out;
+}
+.city-card:nth-child(2) { 
+  animation: cardAppear 0.8s ease-out 0.2s backwards; 
+  animation: float 8s infinite ease-in-out 0.5s;
+}
+.city-card:nth-child(3) { 
+  animation: cardAppear 0.8s ease-out 0.3s backwards; 
+  animation: float 8s infinite ease-in-out 1s;
+}
+.city-card:nth-child(4) { 
+  animation: cardAppear 0.8s ease-out 0.4s backwards; 
+  animation: float 8s infinite ease-in-out 1.5s;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.city-card:hover {
+  transform: translateY(-15px) scale(1.03) rotateY(3deg);
+  box-shadow: 
+    0 25px 40px rgba(67, 56, 202, 0.15),
+    0 10px 20px rgba(67, 56, 202, 0.10),
+    0 0 0 1px rgba(99, 102, 241, 0.2);
+  border-color: transparent;
+  z-index: 2;
+}
+
+.city-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 10%,
+    rgba(255, 255, 255, 0.3) 20%,
+    transparent 30%
+  );
+  opacity: 0;
+  transition: opacity 0.6s linear;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.city-card:hover::after {
+  opacity: 1;
+  animation: shimmer 2s infinite linear;
+}
+
+.city-image-container {
+  height: 13rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.city-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.city-image-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.city-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease, filter 0.5s ease;
+}
+
+.city-card:hover .city-image {
+  transform: scale(1.15) rotate(2deg);
+  filter: brightness(1.15) contrast(1.05);
+}
+
+.city-card-content {
+  padding: 1.75rem;
+  position: relative;
+  z-index: 2;
+  background: white;
+  transition: background-color 0.4s ease;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.city-card:hover .city-card-content {
+  background: linear-gradient(to bottom, #ffffff, #f7f7ff);
+}
+
+.city-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.6rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.city-name::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4338ca, #6366f1, #818cf8);
+  transition: width 0.4s ease;
+  box-shadow: 0 1px 3px rgba(99, 102, 241, 0.3);
+}
+
+.city-card:hover .city-name {
+  color: #4338ca;
+  transform: translateX(3px);
+}
+
+.city-card:hover .city-name::after {
+  width: 100%;
+}
+
+.city-description {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  transition: color 0.3s ease;
+  margin-top: 0.75rem;
+  display: block;
+  min-height: 3rem;
+  font-weight: 500;
+}
+
+.city-card:hover .city-description {
+  color: #334155;
+}
+
+@media (min-width: 768px) {
+  .city-grid {
+    gap: 0.75rem;
+  }
+  
+  .city-card {
+    width: 24.5%;
+  }
+  
+  .city-image-container {
+    height: 14rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .city-grid {
+    gap: 1rem;
+  }
+  
+  .city-card {
+    width: 24.5%;
+  }
+}
+
+.city-card-link {
+  text-decoration: none;
+  color: inherit;
+} 

@@ -1,0 +1,712 @@
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import './Geotagging.css';
+
+const Geotagging = () => {
+  const { id } = useParams();
+  const [monument, setMonument] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Monument data with real coordinates and weather information
+  const monumentsData = {
+    // Delhi Monuments
+    "redfort": {
+      id: "redfort",
+      name: "Red Fort",
+      city: "Delhi",
+      coordinates: {
+        latitude: "28.6562° N",
+        longitude: "77.2410° E",
+        decimal: {
+          lat: 28.6562,
+          lng: 77.2410
+        }
+      },
+      elevation: "234 meters above sea level",
+      climate: {
+        type: "Humid Subtropical Climate",
+        averageTemperature: {
+          annual: "25.3°C",
+          summer: "33-45°C",
+          winter: "5-25°C"
+        },
+        rainfall: {
+          annual: "797 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "62%",
+          summer: "45-60%",
+          winter: "70-90%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Chandni Chowk",
+          distance: "0.5 km",
+          type: "Historical Market"
+        },
+        {
+          name: "Jama Masjid",
+          distance: "1.2 km",
+          type: "Religious Site"
+        },
+        {
+          name: "India Gate",
+          distance: "5.4 km",
+          type: "Monument"
+        }
+      ]
+    },
+    "qutubminar": {
+      id: "qutubminar",
+      name: "Qutub Minar",
+      city: "Delhi",
+      coordinates: {
+        latitude: "28.5245° N",
+        longitude: "77.1855° E",
+        decimal: {
+          lat: 28.5245,
+          lng: 77.1855
+        }
+      },
+      elevation: "237 meters above sea level",
+      climate: {
+        type: "Humid Subtropical Climate",
+        averageTemperature: {
+          annual: "25.3°C",
+          summer: "33-45°C",
+          winter: "5-25°C"
+        },
+        rainfall: {
+          annual: "797 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "62%",
+          summer: "45-60%",
+          winter: "70-90%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Mehrauli Archaeological Park",
+          distance: "0.3 km",
+          type: "Archaeological Site"
+        },
+        {
+          name: "Alai Darwaza",
+          distance: "0.1 km",
+          type: "Historical Monument"
+        },
+        {
+          name: "Quwwat-ul-Islam Mosque",
+          distance: "0.2 km",
+          type: "Religious Site"
+        }
+      ]
+    },
+    "indiagate": {
+      id: "indiagate",
+      name: "India Gate",
+      city: "Delhi",
+      coordinates: {
+        latitude: "28.6129° N",
+        longitude: "77.2295° E",
+        decimal: {
+          lat: 28.6129,
+          lng: 77.2295
+        }
+      },
+      elevation: "216 meters above sea level",
+      climate: {
+        type: "Humid Subtropical Climate",
+        averageTemperature: {
+          annual: "25.3°C",
+          summer: "33-45°C",
+          winter: "5-25°C"
+        },
+        rainfall: {
+          annual: "797 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "62%",
+          summer: "45-60%",
+          winter: "70-90%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Rashtrapati Bhavan",
+          distance: "2.3 km",
+          type: "Government Building"
+        },
+        {
+          name: "National War Memorial",
+          distance: "0.1 km",
+          type: "Memorial"
+        },
+        {
+          name: "National Gallery of Modern Art",
+          distance: "1.5 km",
+          type: "Museum"
+        }
+      ]
+    },
+    "humayunstomb": {
+      id: "humayunstomb",
+      name: "Humayun's Tomb",
+      city: "Delhi",
+      coordinates: {
+        latitude: "28.5933° N",
+        longitude: "77.2507° E",
+        decimal: {
+          lat: 28.5933,
+          lng: 77.2507
+        }
+      },
+      elevation: "225 meters above sea level",
+      climate: {
+        type: "Humid Subtropical Climate",
+        averageTemperature: {
+          annual: "25.3°C",
+          summer: "33-45°C",
+          winter: "5-25°C"
+        },
+        rainfall: {
+          annual: "797 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "62%",
+          summer: "45-60%",
+          winter: "70-90%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Nizamuddin Dargah",
+          distance: "1.0 km",
+          type: "Religious Site"
+        },
+        {
+          name: "Sundar Nursery",
+          distance: "0.5 km",
+          type: "Park"
+        },
+        {
+          name: "Safdarjung's Tomb",
+          distance: "4.2 km",
+          type: "Monument"
+        }
+      ]
+    },
+
+    // Agra Monuments
+    "tajmahal": {
+      id: "tajmahal",
+      name: "Taj Mahal",
+      city: "Agra",
+      coordinates: {
+        latitude: "27.1751° N",
+        longitude: "78.0421° E",
+        decimal: {
+          lat: 27.1751,
+          lng: 78.0421
+        }
+      },
+      elevation: "171 meters above sea level",
+      climate: {
+        type: "Semi-arid Climate",
+        averageTemperature: {
+          annual: "26.7°C",
+          summer: "32-48°C",
+          winter: "4-25°C"
+        },
+        rainfall: {
+          annual: "687 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "55%",
+          summer: "25-50%",
+          winter: "60-80%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Agra Fort",
+          distance: "2.5 km",
+          type: "Monument"
+        },
+        {
+          name: "Mehtab Bagh",
+          distance: "1.2 km",
+          type: "Garden"
+        },
+        {
+          name: "Itimad-ud-Daulah's Tomb",
+          distance: "4.7 km",
+          type: "Monument"
+        }
+      ]
+    },
+    "agrafort": {
+      id: "agrafort",
+      name: "Agra Fort",
+      city: "Agra",
+      coordinates: {
+        latitude: "27.1800° N",
+        longitude: "78.0215° E",
+        decimal: {
+          lat: 27.1800,
+          lng: 78.0215
+        }
+      },
+      elevation: "168 meters above sea level",
+      climate: {
+        type: "Semi-arid Climate",
+        averageTemperature: {
+          annual: "26.7°C",
+          summer: "32-48°C",
+          winter: "4-25°C"
+        },
+        rainfall: {
+          annual: "687 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "55%",
+          summer: "25-50%",
+          winter: "60-80%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Taj Mahal",
+          distance: "2.5 km",
+          type: "Monument"
+        },
+        {
+          name: "Jama Masjid Agra",
+          distance: "1.0 km",
+          type: "Religious Site"
+        },
+        {
+          name: "Kinari Bazaar",
+          distance: "1.5 km",
+          type: "Market"
+        }
+      ]
+    },
+    "fatehpursikri": {
+      id: "fatehpursikri",
+      name: "Fatehpur Sikri",
+      city: "Agra",
+      coordinates: {
+        latitude: "27.0940° N",
+        longitude: "77.6696° E",
+        decimal: {
+          lat: 27.0940,
+          lng: 77.6696
+        }
+      },
+      elevation: "208 meters above sea level",
+      climate: {
+        type: "Semi-arid Climate",
+        averageTemperature: {
+          annual: "26.7°C",
+          summer: "32-48°C",
+          winter: "4-25°C"
+        },
+        rainfall: {
+          annual: "687 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "55%",
+          summer: "25-50%",
+          winter: "60-80%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Jama Masjid Fatehpur",
+          distance: "0.3 km",
+          type: "Religious Site"
+        },
+        {
+          name: "Buland Darwaza",
+          distance: "0.1 km",
+          type: "Monument"
+        },
+        {
+          name: "Salim Chishti Dargah",
+          distance: "0.2 km",
+          type: "Religious Site"
+        }
+      ]
+    },
+    "itimad": {
+      id: "itimad",
+      name: "Itimad-ud-Daulah",
+      city: "Agra",
+      coordinates: {
+        latitude: "27.1927° N",
+        longitude: "78.0307° E",
+        decimal: {
+          lat: 27.1927,
+          lng: 78.0307
+        }
+      },
+      elevation: "170 meters above sea level",
+      climate: {
+        type: "Semi-arid Climate",
+        averageTemperature: {
+          annual: "26.7°C",
+          summer: "32-48°C",
+          winter: "4-25°C"
+        },
+        rainfall: {
+          annual: "687 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "55%",
+          summer: "25-50%",
+          winter: "60-80%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Ram Bagh",
+          distance: "1.5 km",
+          type: "Garden"
+        },
+        {
+          name: "Chini Ka Rauza",
+          distance: "1.2 km",
+          type: "Monument"
+        },
+        {
+          name: "Mehtab Bagh",
+          distance: "3.4 km",
+          type: "Garden"
+        }
+      ]
+    },
+
+    // Jaipur Monuments
+    "hawamahal": {
+      id: "hawamahal",
+      name: "Hawa Mahal",
+      city: "Jaipur",
+      coordinates: {
+        latitude: "26.9239° N",
+        longitude: "75.8267° E",
+        decimal: {
+          lat: 26.9239,
+          lng: 75.8267
+        }
+      },
+      elevation: "431 meters above sea level",
+      climate: {
+        type: "Hot Semi-arid Climate",
+        averageTemperature: {
+          annual: "25.1°C",
+          summer: "30-45°C",
+          winter: "8-24°C"
+        },
+        rainfall: {
+          annual: "650 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "45%",
+          summer: "25-40%",
+          winter: "50-65%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "City Palace",
+          distance: "0.5 km",
+          type: "Palace"
+        },
+        {
+          name: "Jantar Mantar",
+          distance: "0.7 km",
+          type: "Observatory"
+        },
+        {
+          name: "Johri Bazaar",
+          distance: "0.2 km",
+          type: "Market"
+        }
+      ]
+    },
+    "amberfort": {
+      id: "amberfort",
+      name: "Amber Fort",
+      city: "Jaipur",
+      coordinates: {
+        latitude: "26.9855° N",
+        longitude: "75.8513° E",
+        decimal: {
+          lat: 26.9855,
+          lng: 75.8513
+        }
+      },
+      elevation: "500 meters above sea level",
+      climate: {
+        type: "Hot Semi-arid Climate",
+        averageTemperature: {
+          annual: "25.1°C",
+          summer: "30-45°C",
+          winter: "8-24°C"
+        },
+        rainfall: {
+          annual: "650 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "45%",
+          summer: "25-40%",
+          winter: "50-65%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Jaigarh Fort",
+          distance: "1.0 km",
+          type: "Fort"
+        },
+        {
+          name: "Nahargarh Fort",
+          distance: "5.2 km",
+          type: "Fort"
+        },
+        {
+          name: "Panna Meena ka Kund",
+          distance: "0.8 km",
+          type: "Stepwell"
+        }
+      ]
+    },
+    "citypalace": {
+      id: "citypalace",
+      name: "City Palace",
+      city: "Jaipur",
+      coordinates: {
+        latitude: "26.9258° N",
+        longitude: "75.8237° E",
+        decimal: {
+          lat: 26.9258,
+          lng: 75.8237
+        }
+      },
+      elevation: "430 meters above sea level",
+      climate: {
+        type: "Hot Semi-arid Climate",
+        averageTemperature: {
+          annual: "25.1°C",
+          summer: "30-45°C",
+          winter: "8-24°C"
+        },
+        rainfall: {
+          annual: "650 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "45%",
+          summer: "25-40%",
+          winter: "50-65%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "Jantar Mantar",
+          distance: "0.3 km",
+          type: "Observatory"
+        },
+        {
+          name: "Hawa Mahal",
+          distance: "0.5 km",
+          type: "Palace"
+        },
+        {
+          name: "Bapu Bazaar",
+          distance: "1.2 km",
+          type: "Market"
+        }
+      ]
+    },
+    "jantarmantar": {
+      id: "jantarmantar",
+      name: "Jantar Mantar",
+      city: "Jaipur",
+      coordinates: {
+        latitude: "26.9246° N",
+        longitude: "75.8242° E",
+        decimal: {
+          lat: 26.9246,
+          lng: 75.8242
+        }
+      },
+      elevation: "429 meters above sea level",
+      climate: {
+        type: "Hot Semi-arid Climate",
+        averageTemperature: {
+          annual: "25.1°C",
+          summer: "30-45°C",
+          winter: "8-24°C"
+        },
+        rainfall: {
+          annual: "650 mm",
+          rainyMonths: "July to September"
+        },
+        humidity: {
+          annual: "45%",
+          summer: "25-40%",
+          winter: "50-65%"
+        }
+      },
+      nearbyPlaces: [
+        {
+          name: "City Palace",
+          distance: "0.3 km",
+          type: "Palace"
+        },
+        {
+          name: "Hawa Mahal",
+          distance: "0.7 km",
+          type: "Palace"
+        },
+        {
+          name: "Albert Hall Museum",
+          distance: "2.5 km",
+          type: "Museum"
+        }
+      ]
+    }
+  };
+
+  useEffect(() => {
+    // Simulating API call to get monument data
+    setLoading(true);
+    setTimeout(() => {
+      const monumentData = monumentsData[id];
+      if (monumentData) {
+        setMonument(monumentData);
+      }
+      setLoading(false);
+    }, 800);
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="geotagging-page">
+        <div className="geotagging-container">
+          <div className="loading-container">
+            <div className="loading-spinner"></div>
+            <p>Loading geographical information...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!monument) {
+    return (
+      <div className="geotagging-page">
+        <div className="geotagging-container">
+          <div className="not-found">
+            <h2>Monument Not Found</h2>
+            <p>Sorry, we couldn't find geographical information for this monument.</p>
+            <Link to={`/monument/${id}`} className="back-to-monument">
+              Return to Monument Page
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="geotagging-page">
+      <div className="geotagging-container">
+        <div className="geotagging-header">
+          <h1>{monument.name} Location Information</h1>
+          <p>Explore the geographical and climate details of {monument.name} located in {monument.city}, India.</p>
+        </div>
+
+        <div className="geotagging-content">
+          <div className="map-section">
+            <h2>Location Map</h2>
+            <div className="map-container">
+              <iframe
+                title={`${monument.name} Map`}
+                src={`https://maps.google.com/maps?q=${monument.coordinates.decimal.lat},${monument.coordinates.decimal.lng}&z=15&output=embed`}
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          <div className="geotagging-info">
+            <h2>Geographical Information</h2>
+            <div className="info-grid">
+              <div className="info-item">
+                <h3>Coordinates</h3>
+                <div className="coordinates-box">
+                  <p><span>Latitude:</span> {monument.coordinates.latitude}</p>
+                  <p><span>Longitude:</span> {monument.coordinates.longitude}</p>
+                  <p><span>Elevation:</span> {monument.elevation}</p>
+                </div>
+              </div>
+
+              <div className="info-item">
+                <h3>Climate Data</h3>
+                <div className="climate-box">
+                  <p><span>Climate Type:</span> {monument.climate.type}</p>
+                  <p><span>Annual Average Temperature:</span> {monument.climate.averageTemperature.annual}</p>
+                  <p><span>Summer Temperature Range:</span> {monument.climate.averageTemperature.summer}</p>
+                  <p><span>Winter Temperature Range:</span> {monument.climate.averageTemperature.winter}</p>
+                  <p><span>Annual Rainfall:</span> {monument.climate.rainfall.annual}</p>
+                  <p><span>Rainy Season:</span> {monument.climate.rainfall.rainyMonths}</p>
+                  <p><span>Average Humidity:</span> {monument.climate.humidity.annual}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="nearby-places">
+              <h3>Nearby Places of Interest</h3>
+              <div className="nearby-places-grid">
+                {monument.nearbyPlaces.map((place, index) => (
+                  <div className="nearby-place" key={index}>
+                    <p className="nearby-place-name">{place.name}</p>
+                    <p className="nearby-place-distance">{place.distance}</p>
+                    <p className="nearby-place-type">{place.type}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="geotagging-footer">
+          <Link to={`/monument/${id}`} className="back-to-monument">
+            Return to {monument.name} Page
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Geotagging; 
