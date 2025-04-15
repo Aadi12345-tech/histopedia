@@ -1,0 +1,433 @@
+{
+    
+    "name": "Dehli",
+    "monuments": [
+      {
+        "monumentName": "Red Fort",
+        "ShortDesc": "The Red Fort is a historic fort in the city of Delhi that served as the main residence of the Mughal Emperors.",
+        "EntryFee": "35",
+        "StartTime": "9:00 AM",
+        "ClosingTime": "5:00 PM",
+        "History": "Built in 1639–48 by Emperor Shah Jahan, the Red Fort (Lal Qila) derives its name from its massive red sandstone walls. It served as the main residence of the Mughal Emperors for nearly 200 years, until 1856. The fort complex houses numerous buildings including the Diwan-i-Aam (Hall of Public Audience), Diwan-i-Khas (Hall of Private Audience), Rang Mahal (Palace of Colors), and Moti Masjid (Pearl Mosque). It was the ceremonial and political center of the Mughal state and where the emperor would receive members of the public and hear their grievances. During British colonial rule, the fort became a symbol of power and was where the British housed their military. In 1947, India's first Prime Minister, Jawaharlal Nehru, raised the Indian national flag above the Lahori Gate, a tradition that continues today with the Prime Minister's annual Independence Day address to the nation.",
+        "Significance": "The Red Fort represents the zenith of Mughal creativity, blending Persian, Timurid, and Hindu architectural traditions. It influenced later buildings and gardens in Delhi, Rajasthan, and other regions. The fort complex showcases the architectural magnificence and cultural wealth of the Mughal Empire at its peak. The planning and aesthetics of the Red Fort represent a significant phase in the development of Mughal imperial architecture. It serves as a powerful reminder of India's rich cultural heritage and its struggle for independence. Since 1947, the fort has been a politically significant monument, with the Prime Minister delivering the Independence Day speech from its ramparts. In 2007, it was designated a UNESCO World Heritage Site for its outstanding cultural importance. Today, it remains one of India's most iconic landmarks and a major tourist attraction, drawing millions of visitors from around the world each year.",
+        "Artifacts": [
+          {
+            "ArtiName": "Peacock Throne",
+            "Desc": "The Peacock Throne was a famous jeweled throne that was the seat of the Mughal emperors of India. It was commissioned in the early 17th century by Emperor Shah Jahan and was one of the most opulent pieces of royal furniture ever created. The throne was said to be adorned with rubies, emeralds, pearls, and diamonds, including the famous Koh-i-Noor diamond.",
+            "Hist": "The Peacock Throne symbolized the wealth and power of the Mughal Empire at its height. It was looted by Persian invader Nader Shah in 1739 and subsequently disappeared, becoming a legendary artifact of India's royal history."
+          },
+          {
+            "ArtiName": "Ashoka Pillar",
+            "Desc": "The Ashoka Pillars are a series of columns dispersed throughout the Indian subcontinent, erected by Emperor Ashoka during his reign in the 3rd century BCE. These pillars are notable for their polished stone craftsmanship, monolithic construction, and inscriptions that represent some of the oldest deciphered original texts of India.",
+            "Hist": "The pillars and their inscriptions represent the earliest surviving examples of Indian stone sculpture and ancient Indian political history. The lion capital from one of these pillars was adopted as the national emblem of India after independence."
+          }
+        ],
+        "Excavs": [
+          {
+            "Ename": "Northern Excavation Site",
+            "start-end": "1972-1975",
+            "Lead": "Dr. S. K. Sharma",
+            "Findings": "Discovered coins from the Mughal period, pottery, and remains of earlier structures beneath the fort. This excavation revealed significant information about daily life during the Mughal era.",
+            "Team": [
+              "Dr. S.K.Sharma",
+              "Dr.Amrita Roy",
+              "Rajiv Kumar",
+              "Sunita Devi"
+            ],
+            "Discoveries": [
+              "Mughal coins",
+              "Pottery fragments",
+              "Metal utensils",
+              "Jewelry pieces"
+            ],
+            "Techniques": [
+              "Stratigraphic excavation",
+              "Ground penetrating radar",
+              "Carbon dating"
+            ],
+            "_id": {
+              "$oid": "67fe96279f61e95092a6221c"
+            }
+          },
+          {
+            "Ename": "Eastern Wall Excavation",
+            "start-end": "1988-1990",
+            "Lead": "Dr. Rakesh Tewari",
+            "Findings": "Unearthed sections of an earlier wall predating the Red Fort, suggesting an older fortification on the site. The discovery points to continuous habitation and strategic importance of the location across multiple historical periods.",
+            "Team": [
+              "Dr. Rakesh Tewari",
+              "Dr. Meenakshi Jain",
+              "Alok Sharma",
+              "Prabha Gupta"
+            ],
+            "Discoveries": [],
+            "Techniques": [
+              "Horizontal excavation",
+              "Photogrammatry",
+              "Dendrochronology"
+            ]
+          }
+        ],
+        "Events": [
+          {
+            "EvName": "Independance Day Celebration",
+            "Date": "15th Aug 2025",
+            "Time": "7:00 AM-10:00 AM",
+            "Location": "Main Ramparts",
+            "desc": "The annual celebration of India's Independence Day, featuring the Prime Minister's address to the nation from the ramparts of the Red Fort.",
+            "Ticket": "Free for All",
+            "Organisor": "Govt of India",
+            "Type": "Cultural"
+          },
+          {
+            "EvName": "Sound and Light Show",
+            "Date": "Daily(Except Mondays)",
+            "Time": "6:00 PM-7:00 PM",
+            "Location": "Naubat Khana",
+            "desc": "An immersive sound and light show that narrates the history of the Red Fort and Delhi through spectacular visual projections and narration.",
+            "Ticket": "Rs.150 for adults. Rs.75 for Children",
+            "Organisor": "Archeological Survey of India",
+            "Type": "Entertainment"
+          }
+        ],
+        "Guides": [
+          {
+            "Gname": "Rajesh Kumar",
+            "Rating": 4.9,
+            "NoR": 305,
+            "Languages": "English, Hindi, Tamil",
+            "Experience": "12 Years",
+            "Cost": "Rs.2000 for 2 hours"
+          },
+          {
+            "Gname": "Priya Singh",
+            "Rating": 4.8,
+            "NoR": 285,
+            "Languages": "English, Hindi, Kannada",
+            "Experience": "10 Years",
+            "Cost": "Rs.1800 for 2 hours"
+          }
+        ]
+      },
+      {
+        "monumentName": "Qutub Minar",
+        "ShortDesc": "The Qutub Minar is a minaret and victory tower that forms part of the Qutub complex.",
+        "EntryFee": "30",
+        "StartTime": "9:00 AM",
+        "ClosingTime": "5:00 PM",
+        "History": "The Qutub Minar was built in 1193 by Qutb-ud-din Aibak, the founder of the Delhi Sultanate, to celebrate Muslim victory over the last Hindu kingdom in Delhi. The construction began after the defeat of Delhi's last Hindu kingdom, and was completed by his successor Iltutmish and later restored and expanded by Firoz Shah Tughlaq in 1368. The tower's construction spanned three generations of rulers. Standing at 72.5 meters (238 feet), it was the tallest minaret in the world at the time of its completion. The tower consists of five distinct storeys, each marked by a projecting balcony and tapers from a 15-meter diameter at the base to just 2.5 meters at the top. The first three storeys are made of red sandstone, while the fourth and fifth storeys are made of marble and sandstone. Each storey features intricate carvings of verses from the Quran and various decorative elements, showing the evolution of architectural styles over time. The Qutub complex also contains the Iron Pillar of Delhi, a 7.21-meter (24-foot) high pillar from the Gupta Empire (4th century CE) that has stood for over 1,600 years without rusting, demonstrating the advanced metallurgical skills of ancient India.",
+        "Significance": "The Qutub Minar is one of the earliest and most prominent examples of Indo-Islamic architecture, representing the beginning of Muslim rule in India. It masterfully combines traditional Hindu decorative elements with Islamic calligraphy and architectural principles, symbolizing the cultural synthesis that would characterize much of India's medieval period. The monument marks a pivotal turning point in Indian history and architecture, showing the transition from Hindu temple architectural styles to new Islamic-influenced designs. The scientific and engineering achievement of the Qutub Minar is remarkable - its earthquake-resistant design has allowed it to withstand numerous seismic events over eight centuries. The complex is now a UNESCO World Heritage Site, recognized for its outstanding universal value and architectural significance. The Qutub Minar continues to be one of India's most visited monuments, attracting scholars, architects, and tourists from around the world. As the first major Islamic monument built in India, it set architectural precedents that would influence buildings throughout the subcontinent for centuries to come. Beyond its architectural importance, the Qutub Minar serves as a powerful cultural symbol in modern India, featured on postage stamps, in literature, and in numerous cultural references.",
+        "Artifacts": [
+          {
+            "ArtiName": "Peacock Throne",
+            "Desc": "The Peacock Throne was a famous jeweled throne that was the seat of the Mughal emperors of India. It was commissioned in the early 17th century by Emperor Shah Jahan and was one of the most opulent pieces of royal furniture ever created. The throne was said to be adorned with rubies, emeralds, pearls, and diamonds, including the famous Koh-i-Noor diamond.",
+            "Hist": "The Peacock Throne symbolized the wealth and power of the Mughal Empire at its height. It was looted by Persian invader Nader Shah in 1739 and subsequently disappeared, becoming a legendary artifact of India's royal history."
+          },
+          {
+            "ArtiName": "Ashoka Pillar",
+            "Desc": "The Ashoka Pillars are a series of columns dispersed throughout the Indian subcontinent, erected by Emperor Ashoka during his reign in the 3rd century BCE. These pillars are notable for their polished stone craftsmanship, monolithic construction, and inscriptions that represent some of the oldest deciphered original texts of India.",
+            "Hist": "The pillars and their inscriptions represent the earliest surviving examples of Indian stone sculpture and ancient Indian political history. The lion capital from one of these pillars was adopted as the national emblem of India after independence."
+          }
+        ],
+        "Excavs": [
+          {
+            "Ename": "Northern Excavation Site",
+            "start-end": "1972-1975",
+            "Lead": "Dr. S. K. Sharma",
+            "Findings": "Discovered coins from the Mughal period, pottery, and remains of earlier structures beneath the fort. This excavation revealed significant information about daily life during the Mughal era.",
+            "Team": [
+              "Dr. S.K.Sharma",
+              "Dr.Amrita Roy",
+              "Rajiv Kumar",
+              "Sunita Devi"
+            ],
+            "Discoveries": [
+              "Mughal coins",
+              "Pottery fragments",
+              "Metal utensils",
+              "Jewelry pieces"
+            ],
+            "Techniques": [
+              "Stratigraphic excavation",
+              "Ground penetrating radar",
+              "Carbon dating"
+            ]
+          },
+          {
+            "Ename": "Eastern Wall Excavation",
+            "start-end": "1988-1990",
+            "Lead": "Dr. Rakesh Tewari",
+            "Findings": "Unearthed sections of an earlier wall predating the Red Fort, suggesting an older fortification on the site. The discovery points to continuous habitation and strategic importance of the location across multiple historical periods.",
+            "Team": [
+              "Dr. Rakesh Tewari",
+              "Dr. Meenakshi Jain",
+              "Alok Sharma",
+              "Prabha Gupta"
+            ],
+            "Discoveries": [
+              "Mughal coins",
+              "Pottery fragments",
+              "Metal utensils",
+              "Jewelry pieces"
+            ],
+            "Techniques": [
+              "Horizontal excavation",
+              "Photogrammatry",
+              "Dendrochronology"
+            ]
+          }
+        ],
+        "Events": [
+          {
+            "EvName": "Independance Day Celebration",
+            "Date": "15th Aug 2025",
+            "Time": "7:00 AM-10:00 AM",
+            "Location": "Main Ramparts",
+            "desc": "The annual celebration of India's Independence Day, featuring the Prime Minister's address to the nation from the ramparts of the Red Fort.",
+            "Ticket": "Free for All",
+            "Organisor": "Govt of India",
+            "Type": "Cultural"
+          },
+          {
+            "EvName": "Sound and Light Show",
+            "Date": "Daily(Except Mondays)",
+            "Time": "6:00 PM-7:00 PM",
+            "Location": "Naubat Khana",
+            "desc": "An immersive sound and light show that narrates the history of the Red Fort and Delhi through spectacular visual projections and narration.",
+            "Ticket": "Rs.150 for adults. Rs.75 for Children",
+            "Organisor": "Archeological Survey of India",
+            "Type": "Entertainment"
+          }
+        ],
+        "Guides": [
+          {
+            "Gname": "Rajesh Kumar",
+            "Rating": 4.9,
+            "NoR": 305,
+            "Languages": "English, Hindi, Tamil",
+            "Experience": "12 Years",
+            "Cost": "Rs.2000 for 2 hours"
+          },
+          {
+            "Gname": "Priya Singh",
+            "Rating": 4.8,
+            "NoR": 285,
+            "Languages": "English, Hindi, Kannada",
+            "Experience": "10 Years",
+            "Cost": "Rs.1800 for 2 hours"
+          }
+        ]
+      },
+      {
+        "monumentName": "India Gate",
+        "ShortDesc": "The India Gate is a war memorial located astride the Rajpath, on the eastern edge of the ceremonial axis of New Delhi.",
+        "EntryFee": "Free Entry",
+        "StartTime": "9:00 AM",
+        "ClosingTime": "5:00 PM",
+        "History": "The India Gate, originally called the All India War Memorial, was designed by Sir Edwin Lutyens, a leading member of the British town planning for New Delhi. Construction began in 1921 and was completed in 1931, taking ten years to build. The memorial was built to honor the 82,000 soldiers of the undivided British Indian Army who died serving in the First World War (1914-1918) and the Third Anglo-Afghan War (1919). The names of 13,300 servicemen, including some soldiers and officers from the United Kingdom, are inscribed on the gate. Following India's independence in 1947, the India Gate became a symbol of national pride and was incorporated into India's Republic Day celebrations. In 1971, a simple black marble cenotaph with a rifle topped by a soldier's helmet, known as the Amar Jawan Jyoti (Flame of the Immortal Soldier), was added beneath the archway to commemorate the Indian soldiers who died in the 1971 Indo-Pakistan War. This eternal flame burned continuously for 50 years until it was merged with the National War Memorial flame in 2022. In 2022, the canopy near India Gate that once housed the statue of King George V was replaced with a statue of Subhas Chandra Bose, a prominent Indian nationalist leader.",
+        "Significance": "The India Gate stands as one of India's largest war memorials and is a powerful symbol of national sacrifice and pride. Architecturally, it exemplifies the British Imperial style that characterized Edwin Lutyens' design for New Delhi, with elements inspired by the Arc de Triomphe in Paris but adapted to include Indian decorative elements. The memorial holds immense historical importance as it commemorates the sacrifice of Indian soldiers who fought in various wars, bridging India's colonial past and its independent present. The memorial's location at the eastern end of the Rajpath (now Kartavya Path) makes it part of the ceremonial axis of New Delhi and a central element in India's most important state functions, including the annual Republic Day parade. Beyond its commemorative role, the India Gate and its surrounding lawns have become one of Delhi's most popular public spaces, visited by thousands of locals and tourists daily. The site has evolved into a vibrant recreational area where families gather, especially in the evenings when the monument is illuminated. The recent addition of Subhas Chandra Bose's statue in 2022 represents how the monument continues to evolve as a space that reflects India's developing national identity and historical narrative. In contemporary India, the India Gate remains an iconic landmark that appears in numerous films, photographs, and tourist literature, making it one of the most recognizable symbols of New Delhi and modern India.",
+        "Artifacts": [
+          {
+            "ArtiName": "Peacock Throne",
+            "Desc": "The Peacock Throne was a famous jeweled throne that was the seat of the Mughal emperors of India. It was commissioned in the early 17th century by Emperor Shah Jahan and was one of the most opulent pieces of royal furniture ever created. The throne was said to be adorned with rubies, emeralds, pearls, and diamonds, including the famous Koh-i-Noor diamond.",
+            "Hist": "The Peacock Throne symbolized the wealth and power of the Mughal Empire at its height. It was looted by Persian invader Nader Shah in 1739 and subsequently disappeared, becoming a legendary artifact of India's royal history.",
+            "_id": {
+              "$oid": "67fea726456f0624ab66b5cd"
+            }
+          },
+          {
+            "ArtiName": "Ashoka Pillar",
+            "Desc": "The Ashoka Pillars are a series of columns dispersed throughout the Indian subcontinent, erected by Emperor Ashoka during his reign in the 3rd century BCE. These pillars are notable for their polished stone craftsmanship, monolithic construction, and inscriptions that represent some of the oldest deciphered original texts of India.",
+            "Hist": "The pillars and their inscriptions represent the earliest surviving examples of Indian stone sculpture and ancient Indian political history. The lion capital from one of these pillars was adopted as the national emblem of India after independence."
+          }
+        ],
+        "Excavs": [
+          {
+            "Ename": "Northern Excavation Site",
+            "start-end": "1972-1975",
+            "Lead": "Dr. S. K. Sharma",
+            "Findings": "Discovered coins from the Mughal period, pottery, and remains of earlier structures beneath the fort. This excavation revealed significant information about daily life during the Mughal era.",
+            "Team": [
+              "Dr. S.K.Sharma",
+              "Dr.Amrita Roy",
+              "Rajiv Kumar",
+              "Sunita Devi"
+            ],
+            "Discoveries": [
+              "Mughal coins",
+              "Pottery fragments",
+              "Metal utensils",
+              "Jewelry pieces"
+            ],
+            "Techniques": [
+              "Stratigraphic excavation",
+              "Ground penetrating radar",
+              "Carbon dating"
+            ]
+          },
+          {
+            "Ename": "Eastern Wall Excavation",
+            "start-end": "1988-1990",
+            "Lead": "Dr. Rakesh Tewari",
+            "Findings": "Unearthed sections of an earlier wall predating the Red Fort, suggesting an older fortification on the site. The discovery points to continuous habitation and strategic importance of the location across multiple historical periods.",
+            "Team": [
+              "Dr. Rakesh Tewari",
+              "Dr. Meenakshi Jain",
+              "Alok Sharma",
+              "Prabha Gupta"
+            ],
+            "Discoveries": [],
+            "Techniques": [
+              "Horizontal excavation",
+              "Photogrammatry",
+              "Dendrochronology"
+            ]
+          }
+        ],
+        "Events": [
+          {
+            "EvName": "Independance Day Celebration",
+            "Date": "15th Aug 2025",
+            "Time": "7:00 AM-10:00 AM",
+            "Location": "Main Ramparts",
+            "desc": "The annual celebration of India's Independence Day, featuring the Prime Minister's address to the nation from the ramparts of the Red Fort.",
+            "Ticket": "Free for All",
+            "Organisor": "Govt of India",
+            "Type": "Cultural"
+          },
+          {
+            "EvName": "Sound and Light Show",
+            "Date": "Daily(Except Mondays)",
+            "Time": "6:00 PM-7:00 PM",
+            "Location": "Naubat Khana",
+            "desc": "An immersive sound and light show that narrates the history of the Red Fort and Delhi through spectacular visual projections and narration.",
+            "Ticket": "Rs.150 for adults. Rs.75 for Children",
+            "Organisor": "Archeological Survey of India",
+            "Type": "Entertainment"
+          }
+        ],
+        "Guides": [
+          {
+            "Gname": "Rajesh Kumar",
+            "Rating": 4.9,
+            "NoR": 305,
+            "Languages": "English, Hindi, Tamil",
+            "Experience": "12 Years",
+            "Cost": "Rs.2000 for 2 hours"
+          },
+          {
+            "Gname": "Priya Singh",
+            "Rating": 4.8,
+            "NoR": 285,
+            "Languages": "English, Hindi, Kannada",
+            "Experience": "10 Years",
+            "Cost": "Rs.1800 for 2 hours"
+          }
+        ]
+      },
+      {
+        "monumentName": "Humayun's Tomb",
+        "ShortDesc": "Humayun's tomb is the tomb of the Mughal Emperor Humayun in Delhi, India.",
+        "EntryFee": "35",
+        "StartTime": "9:00 AM",
+        "ClosingTime": "5:00 PM",
+        "History": "Humayun's Tomb was built between 1569-1570, commissioned by Humayun's first wife and chief consort, Empress Bega Begum (also known as Haji Begum), nine years after the Emperor's death. The construction cost 1.5 million rupees, funded entirely by the Empress. The tomb was designed by Mirak Mirza Ghiyas, a Persian architect chosen by the Empress, and was the first garden-tomb on the Indian subcontinent. The construction was supervised by Mirak's son, Sayyid Muhammad, after his father's death. The site chosen was on the banks of the Yamuna River, in a large walled garden. Humayun had previously established many gardens in Kabul and Delhi, and this may have influenced the choice of setting. The main tomb took eight years to build, and the empress herself supervised the construction. The complex also included a mosque, a guest house, and other Mughal-era structures. During the Partition of India, the tomb complex was used as a refugee camp for people migrating to the newly formed Pakistan. After independence, the Archaeological Survey of India undertook a major restoration project between 1997-2013, which restored the gardens, fountains, and water channels to their original glory.",
+        "Significance": "Humayun's Tomb is architecturally one of the most influential Mughal buildings, representing a leap in Mughal architecture and setting a precedent for future Mughal tombs. It combines Persian and Indian architectural elements in a harmonious synthesis and is considered a precursor to the Taj Mahal. The tomb pioneered several architectural innovations that became hallmarks of Mughal design, including the garden-tomb concept (char-bagh) with quadrilateral layout and water channels representing the four rivers of Paradise according to Islamic belief. The use of red sandstone with white marble accents created a distinctive aesthetic that influenced numerous later buildings. The double dome structure, first of its kind in India, allowed for greater height while maintaining interior proportions. In 1993, Humayun's Tomb was declared a UNESCO World Heritage Site, recognized for its cultural significance and architectural innovation. The restoration of the tomb complex has become a model for heritage conservation in India, including the urban renewal project in the adjoining Nizamuddin area that combined conservation with socio-economic development initiatives. The tomb complex continues to be one of Delhi's most significant historical sites, attracting hundreds of thousands of visitors annually.",
+        "Artifacts": [
+          {
+            "ArtiName": "Peacock Throne",
+            "Desc": "The Peacock Throne was a famous jeweled throne that was the seat of the Mughal emperors of India. It was commissioned in the early 17th century by Emperor Shah Jahan and was one of the most opulent pieces of royal furniture ever created. The throne was said to be adorned with rubies, emeralds, pearls, and diamonds, including the famous Koh-i-Noor diamond.",
+            "Hist": "The Peacock Throne symbolized the wealth and power of the Mughal Empire at its height. It was looted by Persian invader Nader Shah in 1739 and subsequently disappeared, becoming a legendary artifact of India's royal history."
+          },
+          {
+            "ArtiName": "Ashoka Pillar",
+            "Desc": "The Ashoka Pillars are a series of columns dispersed throughout the Indian subcontinent, erected by Emperor Ashoka during his reign in the 3rd century BCE. These pillars are notable for their polished stone craftsmanship, monolithic construction, and inscriptions that represent some of the oldest deciphered original texts of India.",
+            "Hist": "The pillars and their inscriptions represent the earliest surviving examples of Indian stone sculpture and ancient Indian political history. The lion capital from one of these pillars was adopted as the national emblem of India after independence."
+          }
+        ],
+        "Excavs": [
+          {
+            "Ename": "Northern Excavation Site",
+            "start-end": "1972-1975",
+            "Lead": "Dr. S. K. Sharma",
+            "Findings": "Discovered coins from the Mughal period, pottery, and remains of earlier structures beneath the fort. This excavation revealed significant information about daily life during the Mughal era.",
+            "Team": [
+              "Dr. S.K.Sharma",
+              "Dr.Amrita Roy",
+              "Rajiv Kumar",
+              "Sunita Devi"
+            ],
+            "Discoveries": [
+              "Mughal coins",
+              "Pottery fragments",
+              "Metal utensils",
+              "Jewelry pieces"
+            ],
+            "Techniques": [
+              "Stratigraphic excavation",
+              "Ground penetrating radar",
+              "Carbon dating"
+            ]
+          },
+          {
+            "Ename": "Eastern Wall Excavation",
+            "start-end": "1988-1990",
+            "Lead": "Dr. Rakesh Tewari",
+            "Findings": "Unearthed sections of an earlier wall predating the Red Fort, suggesting an older fortification on the site. The discovery points to continuous habitation and strategic importance of the location across multiple historical periods.",
+            "Team": [
+              "Dr. Rakesh Tewari",
+              "Dr. Meenakshi Jain",
+              "Alok Sharma",
+              "Prabha Gupta"
+            ],
+            "Discoveries": [],
+            "Techniques": [
+              "Horizontal excavation",
+              "Photogrammatry",
+              "Dendrochronology"
+            ]
+          }
+        ],
+        "Events": [
+          {
+            "EvName": "Independance Day Celebration",
+            "Date": "15th Aug 2025",
+            "Time": "7:00 AM-10:00 AM",
+            "Location": "Main Ramparts",
+            "desc": "The annual celebration of India's Independence Day, featuring the Prime Minister's address to the nation from the ramparts of the Red Fort.",
+            "Ticket": "Free for All",
+            "Organisor": "Govt of India",
+            "Type": "Cultural"
+          },
+          {
+            "EvName": "Sound and Light Show",
+            "Date": "Daily(Except Mondays)",
+            "Time": "6:00 PM-7:00 PM",
+            "Location": "Naubat Khana",
+            "desc": "An immersive sound and light show that narrates the history of the Red Fort and Delhi through spectacular visual projections and narration.",
+            "Ticket": "Rs.150 for adults. Rs.75 for Children",
+            "Organisor": "Archeological Survey of India",
+            "Type": "Entertainment"
+          }
+        ],
+        "Guides": [
+          {
+            "Gname": "Rajesh Kumar",
+            "Rating": 4.9,
+            "NoR": 305,
+            "Languages": "English, Hindi, Tamil",
+            "Experience": "12 Years",
+            "Cost": "Rs.2000 for 2 hours"
+          },
+          {
+            "Gname": "Priya Singh",
+            "Rating": 4.8,
+            "NoR": 285,
+            "Languages": "English, Hindi, Kannada",
+            "Experience": "10 Years",
+            "Cost": "Rs.1800 for 2 hours"
+          }
+        ]
+      }
+    ]
+  }
