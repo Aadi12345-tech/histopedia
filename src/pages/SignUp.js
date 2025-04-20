@@ -89,7 +89,7 @@ const SignUp = () => {
     return Object.keys(newErrors).length === 0;
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     setErrorMessage('');
     
@@ -97,6 +97,20 @@ const SignUp = () => {
       setIsSubmitting(true);
       
       try {
+
+        const user =  await fetch("http://localhost:5000/users", {
+          method: "POST",  
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: formData.fullName,
+            password: formData.password,
+          }),
+        });
+        if(!user.ok) {
+          console.log("Error posting data")
+        }
         // Login the user with context
         login({
           username: formData.fullName,
@@ -327,6 +341,13 @@ const SignUp = () => {
           </div>
           {errors.agreeTerms && <div className="error-message" style={{ color: isDarkMode ? '#F87171' : '#ef4444', marginTop: '4px' }}>{errors.agreeTerms}</div>}
           
+          <button 
+          type="submit"
+          id="submitButton"
+          class = "submit-button"
+          name="submit"
+          onClick={handleSubmit}>Sign up</button>
+
           <div className="divider" style={{
             position: 'relative',
             margin: '1.5rem 0',
