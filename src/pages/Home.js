@@ -1,34 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import './Home.css'; 
+import './Home.css'; // We'll create this CSS file next
 
-function Home () {
-  const {city, setCities} = useState([]);
-
-  useEffect(() => {  
-    fetchCities();
-  }, []); 
-
-  const fetchCities = async () => {
-    try {
-      const response = await axios.get('http://localhost:5000/cities'); 
-      const data = await response.data.json();
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      setCities(data);
-      console.log(data);
-    } catch (error) {
-      console.error('Error fetching cities:', error);
-    }
-  };
-
+const Home = () => {
   const cities = [
     {
       id: 1,
-      name: city[0].name,
+      name: 'Delhi',
       image: 'https://www.holidify.com/images/bgImages/DELHI.jpg',
       monuments: ['Red Fort', 'Qutub Minar', 'India Gate', 'Humayun\'s Tomb']
     },

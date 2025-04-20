@@ -49,7 +49,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
@@ -134,6 +133,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+.success-message{
+  color: rgb(4, 255, 4);
+  border: solid 1px rgb(4, 255, 4);
+  background-color: rgba(4, 255, 4, 0.1);
 }
 
 .login-form {
@@ -366,6 +371,11 @@ body {
   background-color: #1e293b;
   color: #f1f5f9;
   border: 1px solid #334155;
+}
+
+.error-message{
+  border: red solid 1.5px;
+  color: red;
 }
 
 .google-button:hover {

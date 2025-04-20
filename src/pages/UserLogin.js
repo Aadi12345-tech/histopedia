@@ -3,9 +3,84 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { auth, googleProvider } from '../utils/firebase';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
+import axios from 'axios';
+import bcryptjs from 'bcryptjs';
 import './UserLogin.css';
 
 const UserLogin = () => {
+
+  useEffect(()=> {
+    setUsername("");
+    setPassword("");
+    setIncorrectP(0);
+    setIncorrectU(0)
+  }, []);
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [incorrectp, setIncorrectP] = useState(0);
+  const [incorrectu, setIncorrectU] = useState(0);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  
+
+  const fetchData = async (username, password) => {
+    try {
+      const response = await axios.get("http://localhost:5000/users");
+      if (!response.ok) {
+        console.log("Network response was not ok");
+      }
+      const users = response.data;
+      // console.log(users)
+      
+      const user = users.find((user) => user.username === username);
+      // console.log(user)
+
+      if(!user)
+      {
+        setIncorrectU(1);
+      }
+
+      const comparison = await bcryptjs.compare(password, user.password)
+      setTimeout(() => { 
+        if(comparison) {
+          // setUser(user.id)
+          // const histRes = await fetch("http://localhost:3000/history")
+          // const hist = histRes.find((hist)=> hist.username = username)
+          // setHistory(hist.id)
+          // console.log(userId, historyId)
+          setLoggedIn(true);
+          
+          navigate("/")
+        } else {
+          setIncorrectP(1);
+          
+          navigate("/user-login");
+        }
+      }, 1000);
+
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  
+
+  function onSubmit (username, password) {
+    return async (e) => {
+      e.preventDefault();
+      setIncorrectP(0);
+      setIncorrectU(0);
+      setUsername(username);
+      setPassword(password);
+      await fetchData(username, password);
+    };  
+
+    
+  }
+
+
   const navigate = useNavigate();
   const location = useLocation();
   const { darkMode, toggleTheme } = useTheme();
@@ -58,55 +133,17 @@ const UserLogin = () => {
       ...formData,
       [name]: type === 'checkbox' ? checked : value,
     });
+    setIncorrectP(0);
+    setIncorrectU(0);
+    console.log(formData)
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrorMessage('');
-    setIsLoading(true);
-    
-    try {
-      // For demo purposes, simulate a login (no actual authentication)
-      // In a real app, you would validate against a backend
-      if (formData.username.length < 3) {
-        throw new Error('Username must be at least 3 characters long');
-      }
-      
-      if (formData.password.length < 6) {
-        throw new Error('Password must be at least 6 characters long');
-      }
-      
-      // Login the user with context
-      login({
-        username: formData.username,
-        email: `${formData.username}@example.com`, // Placeholder for demo
-      });
-      
-      // Set success message
-      setSuccessMessage('Login successful! Redirecting...');
-      
-      // Redirect after a short delay
-      setTimeout(() => {
-        // Navigate to the redirect path or home page
-        if (redirectPath) {
-          navigate(redirectPath);
-        } else {
-          navigate('/');
-        }
-      }, 1000);
-    } catch (error) {
-      setErrorMessage(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const handleGoogleLogin = async () => {
     setErrorMessage('');
     setIsLoading(true);
     
     try {
-      // Sign in with Google popup
       const result = await auth.signInWithPopup(googleProvider);
       
       // Use the googleLogin function from AuthContext
@@ -157,15 +194,17 @@ const UserLogin = () => {
           {successMessage}
         </div>
       )}
+
+      {loggedIn === true && <div className="success-message">Login successful!</div>}
       
       {errorMessage && (
         <div className="error-message">
           {errorMessage}
         </div>
       )}
-
+      {(incorrectu === 1 || incorrectp ===1 ) && <div className="error-message">Incorrect Credentials</div>}
       <div className="login-box">
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={onSubmit}>
           <div className="form-group">
             <label htmlFor="username" className="form-label">Username</label>
             <div className="form-input-wrapper">
@@ -228,9 +267,9 @@ const UserLogin = () => {
           <button
             type="submit"
             className="login-button"
+            onClick={onSubmit(formData.username, formData.password)}
             disabled={isLoading}
-          >
-            {isLoading ? 'Signing in...' : 'Sign in'}
+          >Sign in
           </button>
 
           <div className="divider">
@@ -254,6 +293,8 @@ const UserLogin = () => {
           <div className="divider">
             <span className="divider-text">New user?</span>
           </div>
+
+          
 
           <Link 
             to={redirectPath ? `/signup?redirect=${encodeURIComponent(redirectPath)}` : "/signup"} 
